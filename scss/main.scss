@@ -1,7 +1,87 @@
-// dollar sign to initialize variable, css is compiled from this file i.e do not touch css file
-$primary-color:#555;
+// write import without _ and .scss
+@import 'config';
+
+// asterisk for selecting everything
+* {
+    box-sizing: border-box;
+}
 
 body {
-    background: $primary-color;
+    @include background;
+    background: $main-color;
+    color: #eee;
+    height: 100%;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 2;
+}
+// Headings
+// & here is either h1.large-heading or h2.large-heading
+// 1rem = 16px (html default font-size), em units same except goes on parent element of what styling instead of html
+
+h1, 
+h2,
+h3 {
+   margin: 0;
+   font-weight: 450;
+
+   &.large-heading {
+       font-size: 4rem;
+   }
+   &.small-heading {
+       margin-bottom: 3rem;
+       // 0.4rem top bottom, 2 rem for left right
+       padding: 0.8rem 2rem;
+       // background of element lighting, rgba allows second parameter to be opacity
+       background: rgba(lighten($color:$main-color, $amount: 3), ($background-opacity / 2))
+   }
+}
+
+a {
     color: #fff;
+    // remove underlines
+    text-decoration: none;
+}
+
+header {
+    // header stays at top (even if scroll)
+    position: fixed;
+    // bigger # -> closer to screen it is
+    z-index: 2;
+    // stretch across whole screen
+    width: 100%; 
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+main {
+    padding: 4.5rem;
+    height: 100%;
+
+     .icons {
+         margin-top: 1rem;
+
+         a {
+             padding: 0.5rem;
+             // same as a:hover{
+                 // : class
+             &:hover {
+                 color: $secondary-color;
+                 // all -> anything transitionable, 0.5s time taken, effect (use all instead of color since using transition many times)
+                 // using @include for mixin
+                 @include ease-out();
+             }
+         }
+    }
+    // any main that has id of home
+    &#home {
+    // no scroll-bars 
+    overflow: hidden;
+        h1 {
+        // viewportheight 20 out of 100 slices (100 vh is entire viewport)
+        margin-top: 20vh;
+        }
+    }
 }

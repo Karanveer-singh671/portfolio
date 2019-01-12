@@ -1,0 +1,36 @@
+// dollar sign to initialize variable, css is compiled from this file i.e do not touch css file
+// changes made here are not rendered on webpage unless watching + running this file
+$main-color:#555;
+$secondary-color: blue;
+$show-image-on-home: true;
+$image-url-home: url(../img/homebackground.jpg);
+$background-opacity: 0.8;
+// using transition a few times create mixin
+@mixin ease-out {
+    transition: all 0.5s ease-out;
+}
+@mixin background {
+    // if var true in sass
+    @if $show-image-on-home {
+        &#background-image {
+            background-attachment: fixed;
+            background: $image-url-home;
+            // set img to cover entire space
+             background-size: cover;
+            // setting right and top to 0 means start at top left corner, absolute covers whole body
+            // z-index negative to push overlay behind text else text will be behind the overlay
+            // &:after treats this element as a pseudo element after #background image could be before and have content put in
+            //  &:after {
+            //      content: '';
+            .overlay {
+                 position: absolute;
+                 right: 0;
+                 top: 0;
+                 height: 100%;
+                 width: 100%;
+                 z-index: -2;
+                 background: rgba($main-color, $background-opacity);
+             }
+        }
+    }
+}
