@@ -1,0 +1,49 @@
+.menu-btn {
+    // say exactly where it want to be + on top (bring close to front with z index)
+    position: absolute;
+    z-index: 3;
+    // from right 40 px
+    padding: 40px 5px 0 0;
+    right: 40;
+    top: 40;
+    // to get to left side
+    left: 96%;
+    // if hover display pointer
+    cursor: pointer;
+    @include ease-out;
+
+    // this is for the 3 lines for rotating menu button
+    .btn-line {
+        // need to specify px
+        width: 24px;
+        height: 3px;
+        // top 0, right 0, bottom 5px, left 0
+        margin: 0 0 5px 0;
+        background: #fff;
+        @include ease-out;
+
+    }
+    // rotate into an X with menuLines
+    // when has class of closed
+    &.close {
+        transform: rotate(180deg);
+        transform-origin: 35px;
+
+        .btn-line {
+            // line 1 - rotate
+            // select each line of btn-menu, 1 is for the first line
+            &:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+            }
+            // line 2 - hide
+            &:nth-child(2) {
+                // hide
+                opacity: 0;
+            }
+            // line 3 - rotate
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+    }
+}
