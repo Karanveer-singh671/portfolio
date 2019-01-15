@@ -34,3 +34,28 @@ $background-opacity: 0.8;
         }
     }
 }
+// media query inside mixin
+@mixin mediaSmall{
+    // any css inside here will only apply if screen is less than or equal to max-width px
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+}
+@mixin mediaMedium{
+    // any css inside here will only apply if screen is less than or equal to max-width px
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin mediaLarge{
+    // any css inside here will only apply if screen is less than or equal to max-width px
+    @media screen and (min-width: 769px) and (max-width: 1170px) {
+        @content;
+    }
+}
+@mixin mediaXL{
+    // any css inside here will only apply if screen is less than or equal to max-width px
+    @media screen and (min-width: 1171px) {
+        @content;
+    }
+}

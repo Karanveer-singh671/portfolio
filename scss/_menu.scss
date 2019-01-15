@@ -27,7 +27,10 @@
     // when has class of closed
     &.close {
         transform: rotate(180deg);
-        transform-origin: 35px;
+        // pin x to the right side
+        position: absolute;
+        top: 0px;
+        right: 0px;
 
         .btn-line {
             // line 1 - rotate
@@ -101,7 +104,7 @@
         .portrait { 
         width: 300px;
         height: 300px; 
-        background: url('../img/myProfilePic.jpg');
+        background: url('../img/myProfilePic4.jpg');
         border-radius: 50%;
         border: solid 3px $secondary-color;
         }

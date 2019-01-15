@@ -15,7 +15,9 @@
     transition: all 0.5s ease-out; }
   .menu-btn.close {
     transform: rotate(180deg);
-    transform-origin: 35px; }
+    position: absolute;
+    top: 0px;
+    right: 0px; }
     .menu-btn.close .btn-line:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px); }
     .menu-btn.close .btn-line:nth-child(2) {
@@ -58,7 +60,7 @@
     .menu-brand .portrait {
       width: 300px;
       height: 300px;
-      background: url("../img/myProfilePic.jpg");
+      background: url("../img/myProfilePic4.jpg");
       border-radius: 50%;
       border: solid 3px blue; }
   .menu .nav-item {
@@ -92,6 +94,37 @@
 
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .large-heading {
+      line-height: 1;
+      margin: 0 0 1rem 0; }
+  ul.menu-nav,
+  div.menu-brand {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-brand.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 26px; }
+  .menu-brand {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-brand .portrait {
+      background: url("../img/myProfilePic1.jpg");
+      height: 150px;
+      width: 150px; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin: 10vh 0 0 0; } }
 
 * {
   box-sizing: border-box; }

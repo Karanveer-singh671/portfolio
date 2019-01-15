@@ -1,0 +1,55 @@
+// wide screen
+@include mediaXL {
+    
+}
+// desktop
+@include mediaLarge {
+
+}
+//tablet
+@include mediaMedium {
+main {
+    align-items: center;
+    text-align: center;
+
+    .large-heading {
+        line-height: 1;
+        margin: 0 0 1rem 0;
+        }
+    }
+
+    ul.menu-nav,
+    div.menu-brand {
+        float: none;
+        width: 100%;
+        min-height: 0;
+        &.show {
+            transform: translate3d(0,0,0);
+        }
+    }
+
+    .menu-nav {
+        height: 75vh;
+        // from left
+        transform: translate3d(-100%,0,0);
+        font-size: 26px;
+    }
+
+    .menu-brand {
+        height: 25vh;
+        // from right
+        transform: translate3d(100%,0,0);
+
+        .portrait {
+            background: url('../img/myProfilePic1.jpg');
+            height: 150px;
+            width: 150px;
+        } 
+    }
+}
+//smartphone
+@include mediaSmall {
+main#home h1 {
+    margin: 10vh 0 0 0;
+    }
+} 
