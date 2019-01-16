@@ -1,7 +1,6 @@
 // write import without _ and .scss
 @import 'config';
 @import 'menu';
-@import 'mobile';
 
 // asterisk for selecting everything
 * {
@@ -60,7 +59,9 @@ header {
 
 main {
     padding: 4.5rem;
-    height: 100%;
+    // height: 100%;
+    // 60 is footer height so this creates sticky footer
+    min-height: calc(100vh - 60px);
 
      .icons {
          margin-top: 1rem;
@@ -87,3 +88,50 @@ main {
         }
     }
 }
+
+.about-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: 
+    'bioimage bio'
+    'accomplishment1 accomplishment2';
+    // same as 1fr 1fr
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    height: 300px;
+    width: 300px;
+    border-radius: 300px;
+    border: $secondary-color 3px solid;
+}
+
+.bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+}
+
+.accomplishment-1 {
+    grid-area: accomplishment1;
+}
+.accomplishment-2 {
+    grid-area: accomplishment2;
+}
+
+.accomplishment {
+    background: lighten($main-color, 6);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+}
+
+#main-footer {
+    text-align: center;
+    padding: 1rem;
+    background: darken($main-color, 10);
+    color: text-color($main-color);
+    height: 60px;
+}
+
+@import 'mobile';

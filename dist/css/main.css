@@ -95,37 +95,6 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .large-heading {
-      line-height: 1;
-      margin: 0 0 1rem 0; }
-  ul.menu-nav,
-  div.menu-brand {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-nav.show,
-    div.menu-brand.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 26px; }
-  .menu-brand {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-brand .portrait {
-      background: url("../img/myProfilePic1.jpg");
-      height: 150px;
-      width: 150px; } }
-
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    margin: 10vh 0 0 0; } }
-
 * {
   box-sizing: border-box; }
 
@@ -179,7 +148,7 @@ header {
 
 main {
   padding: 4.5rem;
-  height: 100%; }
+  min-height: calc(100vh - 60px); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -191,3 +160,73 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'bioimage bio' 'accomplishment1 accomplishment2';
+  grid-template-columns: repeat(2, 1fr); }
+
+.bio-image {
+  grid-area: bioimage;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  border-radius: 300px;
+  border: blue 3px solid; }
+
+.bio {
+  grid-area: bio;
+  font-size: 1.5rem; }
+
+.accomplishment-1 {
+  grid-area: accomplishment1; }
+
+.accomplishment-2 {
+  grid-area: accomplishment2; }
+
+.accomplishment {
+  background: #646464;
+  padding: 0.5rem;
+  border-bottom: blue 5px solid; }
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #3c3c3c;
+  color: white;
+  height: 60px; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .large-heading {
+      line-height: 1;
+      margin: 0 0 1rem 0; }
+  ul.menu-nav,
+  div.menu-brand {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-brand.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 26px; }
+  .menu-brand {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-brand .portrait {
+      background: url("../img/myProfilePic1.jpg");
+      height: 150px;
+      width: 150px; }
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'accomplishment1' 'accomplishment2';
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin: 10vh 0 0 0; } }

@@ -46,6 +46,15 @@ main {
             width: 150px;
         } 
     }
+
+    .about-info {
+        grid-template-areas:
+        'bioimage'
+        'bio'
+        'accomplishment1'
+        'accomplishment2';
+        grid-template-columns: 1fr;
+    }
 }
 //smartphone
 @include mediaSmall {
