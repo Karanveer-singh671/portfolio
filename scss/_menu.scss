@@ -19,7 +19,7 @@
         height: 3px;
         // top 0, right 0, bottom 5px, left 0
         margin: 0 0 5px 0;
-        background: #fff;
+        background: text-color($main-color);
         @include ease-out;
 
     }
@@ -130,7 +130,7 @@
         text-transform: uppercase;
         padding: 1rem 0;
         font-weight: 300;
-        color: #fff;
+        color: text-color($main-color);
         text-decoration: none;
         @include ease-out;
 

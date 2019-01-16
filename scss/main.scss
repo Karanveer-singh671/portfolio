@@ -11,7 +11,7 @@
 body {
     @include background;
     background: $main-color;
-    color: #eee;
+    color: text-color($main-color);
     height: 100%;
     margin: 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

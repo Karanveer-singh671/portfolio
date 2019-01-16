@@ -5,7 +5,7 @@ $secondary-color: blue;
 $show-image-on-home: true;
 $image-url-home: url(../img/homebackground.jpg);
 $background-opacity: 0.8;
-// using transition a few times create mixin
+// using transition a few times create mixin, cannot return a result from a mixin
 @mixin ease-out {
     transition: all 0.5s ease-out;
 }
@@ -34,6 +34,17 @@ $background-opacity: 0.8;
         }
     }
 }
+
+
+// set the text color 
+@function text-color($color) {
+    @if (lightness($color) > 35){
+        @return black;
+    } @else {
+        @return white;
+    }
+}
+
 // media query inside mixin
 @mixin mediaSmall{
     // any css inside here will only apply if screen is less than or equal to max-width px
