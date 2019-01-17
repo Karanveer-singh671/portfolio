@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Responsive web portfolio",
   "main": "index.js",
-  "homepage": "https://karanveer-singh671.github.io/portfolio",
+  "homepage": "https://Karanveer-singh671.github.io/portfolio",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
     "deploy": "gh-pages -d dist"
