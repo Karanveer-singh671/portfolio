@@ -226,6 +226,25 @@ main {
   color: white;
   height: 60px; }
 
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 16px; }
+  .boxes div {
+    font-size: 30px;
+    border: 3px white solid;
+    padding: 24px 40px;
+    margin-bottom: 48px;
+    transition: all 0.5s ease-out; }
+    .boxes div:hover {
+      padding: 8px 24px;
+      background: blue;
+      color: black; }
+      .boxes div:hover span {
+        color: black; }
+
 @media screen and (min-width: 1171px) {
   .projects {
     grid-template-columns: repeat(4, 1fr); } }

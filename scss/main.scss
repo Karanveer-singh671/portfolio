@@ -180,4 +180,35 @@ main {
     height: 60px;
 }
 
+// Contact Page
+
+.boxes {
+    // flex container 
+    display: flex;
+    // when boxes don't fit will go to next line flex-wrap
+    flex-wrap: wrap;
+    // space content evenly
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 16px;
+    // div tag inside boxes class (no dot)
+    div {
+        font-size: 30px;
+        border: 3px white solid;
+        padding: 24px 40px;
+        margin-bottom: 48px;
+        @include ease-out;
+            // on hover change padding of box!
+        &:hover {
+            padding: 8px 24px;
+            background: $secondary-color;
+            //text color
+            color: text-color($secondary-color);
+            span {
+                color: text-color($secondary-color);
+            }
+        }
+    }
+}
+
 @import 'mobile';
