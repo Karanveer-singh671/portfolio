@@ -193,7 +193,7 @@ main {
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px; }
+  grid-gap: 10px; }
   .projects img {
     width: 100%;
     border: 3px white solid; }
@@ -202,12 +202,37 @@ main {
       border-color: blue;
       transition: all 0.5s ease-out; }
 
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 8px 16px;
+  border: 0;
+  margin-bottom: 5px; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: blue;
+    color: black; }
+
+.btn-dark {
+  background: black;
+  color: white; }
+
+.btn-light {
+  background: #888888;
+  color: white; }
+
 #main-footer {
   text-align: center;
   padding: 1rem;
   background: #3c3c3c;
   color: white;
   height: 60px; }
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -237,8 +262,12 @@ main {
       width: 150px; }
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'accomplishment1' 'accomplishment2';
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
-    margin: 10vh 0 0 0; } }
+    margin: 10vh 0 0 0; }
+  .projects {
+    grid-template-columns: 1fr; } }

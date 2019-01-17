@@ -131,7 +131,7 @@ main {
 .projects {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 10px;
 
     img {
         // image 100% of it's container
@@ -144,6 +144,32 @@ main {
             @include ease-out;
         }
     }
+}
+
+// Button Styles
+.btn {
+    // own line and go across
+    display: block;
+    padding: 8px 16px;
+    border: 0;
+    margin-bottom: 5px;
+    &:hover {
+        background: $secondary-color;
+        color: text-color($secondary-color);
+    }
+}
+
+.btn-dark {
+    // extending a class .btn
+    @extend .btn;
+    background: darken($main-color, 60);
+    color: white;
+}
+
+.btn-light {
+    @extend .btn;
+    background: lighten($main-color, 20);
+    color: white;
 }
 
 #main-footer {

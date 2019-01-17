@@ -1,10 +1,16 @@
 // wide screen
 @include mediaXL {
-    
+    .projects {
+        // instead of 3 fractions want 4
+        grid-template-columns: repeat(4, 1fr)
+    }
 }
 // desktop
 @include mediaLarge {
-
+    .projects {
+        // instead of 3 fractions want 4
+        grid-template-columns: repeat(3, 1fr)
+    }
 }
 //tablet
 @include mediaMedium {
@@ -55,10 +61,18 @@ main {
         'accomplishment2';
         grid-template-columns: 1fr;
     }
+
+    .projects {
+        // instead of 3 fractions want 4
+        grid-template-columns: repeat(2, 1fr)
+    }
 }
 //smartphone
 @include mediaSmall {
 main#home h1 {
     margin: 10vh 0 0 0;
+    }
+    .projects {
+        grid-template-columns: 1fr;
     }
 } 
