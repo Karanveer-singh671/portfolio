@@ -190,6 +190,18 @@ main {
   padding: 0.5rem;
   border-bottom: blue 5px solid; }
 
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px; }
+  .projects img {
+    width: 100%;
+    border: 3px white solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: blue;
+      transition: all 0.5s ease-out; }
+
 #main-footer {
   text-align: center;
   padding: 1rem;
