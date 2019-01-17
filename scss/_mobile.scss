@@ -71,8 +71,14 @@ main {
 @include mediaSmall {
 main#home h1 {
     margin: 10vh 0 0 0;
+    
+    .lg-heading {
+        margin-top:1rem;
+        font-size: 5rem;
+      }
     }
+
     .projects {
         grid-template-columns: 1fr;
     }
-} 
+}
