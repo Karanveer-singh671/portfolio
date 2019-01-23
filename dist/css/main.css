@@ -245,6 +245,9 @@ main {
       color: black; }
       .boxes div:hover span {
         color: black; }
+
+
+        
 @media screen and (min-width: 1171px) {
   .projects {
     grid-template-columns: repeat(4, 1fr); } 
