@@ -164,7 +164,8 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio' 'accomplishment1 accomplishment2';
+  grid-template-areas: 'bioimage bio'
+ 'accomplishment1 accomplishment2';
   grid-template-columns: repeat(2, 1fr); }
 
 .bio-image {
@@ -244,14 +245,17 @@ main {
       color: black; }
       .boxes div:hover span {
         color: black; }
-
 @media screen and (min-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); } 
+  }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); } 
+    .overlay {
+      font-size: 2vw;
+    }}
 
 @media screen and (max-width: 768px) {
   main {
@@ -280,10 +284,58 @@ main {
       height: 150px;
       width: 150px; }
   .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'accomplishment1' 'accomplishment2';
+    grid-template-areas: 'bioimage'
+ 'bio'
+ 'accomplishment1'
+ 'accomplishment2';
     grid-template-columns: 1fr; }
   .projects {
     grid-template-columns: repeat(2, 1fr); } }
+
+    .container {
+      position: relative;
+      width: 100%;
+    }
+    
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      overflow: hidden;
+      word-wrap: break-word;
+      font-size: 1.5vw;
+      color:white;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: rgb(116, 108, 145);
+    }
+    
+    .container:hover .overlay {
+      opacity: 1;
+    }
+    
+    .span {
+      overflow: hidden;
+      color: white;
+      font-size: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: left;
+    }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
@@ -292,4 +344,8 @@ main {
       margin-top: 1rem;
       font-size: 5rem; }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; } 
+  
+  .overlay {
+    font-size: 3vw;
+  }}
