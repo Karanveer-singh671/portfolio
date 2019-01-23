@@ -126,7 +126,12 @@ h3 {
   h1.large-heading,
   h2.large-heading,
   h3.large-heading {
-    font-size: 4rem; }
+    font-size: 4rem;
+}
+  h1.large-heading1 {
+    color:black;
+    font-size: 4rem;
+  }
   h1.small-heading,
   h2.small-heading,
   h3.small-heading {
